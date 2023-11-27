@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <title>Tibás Proyecto 3</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header,
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .image-container {
+            text-align: center;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Tibás</h1>
+    </header>
+
+    <section>
+        <div class="image-container">
+            <img src="https://drive.google.com/file/d/14kBEOwYzEHjItywH4J65n1zpepenXt0H/view?usp=drive_link" alt="Imagen 1">
+            <p>Calles Tibás</p>
+        </div>
+
+        <div class="image-container">
+            <img src="/SVG/cantones.svg" alt="Imagen 2">
+            <p>Cantones</p>
+        </div>
+
+        <div class="image-container">
+            <img src="/SVG/provincias.svg" alt="Imagen 3">
+            <p>Provincias</p>
+        </div>
+
+        <div class="image-container">
+            <img src="/SVG/riosTibas.svg" alt="Imagen 4">
+            <p>Rios Tibás</p>
+        </div>
+
+        <div class="image-container">
+            <img src="/SVG/Tibas.svg" alt="Imagen 5">
+            <p>Tibás</p>
+        </div>
+    </section>
+
+
+    <div id="map1" style="height: 400px;"></div>
+    <p>Cinco Esquinas</p>
+
+    <div id="map2" style="height: 400px;"></div>
+    <p>LEON XIII</p>
+
+    <div id="map3" style="height: 400px;"></div>
+    <p>San Juan</p>
+
+    <div id="map4" style="height: 400px;"></div>
+    <p>Llorente</p>
+
+    <div id="map5" style="height: 400px;"></div>
+    <p>Colima</p>
+
+    <footer>
+        <p>Andrés Gonzalez / Luis Chavarría</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-omnivore/leaflet-omnivore.min.js"></script>
+    <script>
+        var map = L.map('map1').setView([9.9473, -84.0823], 15);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        var polygon = L.polygon([
+            [9.9510, -84.0772],
+            [9.9492, -84.0888],
+            [9.9440, -84.0831]
+        ]).addTo(map);
+
+        var map = L.map('map2').setView([9.9604, -84.0995], 15);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        var polygon = L.polygon([
+            [9.9630, -84.1065],
+            [9.9594, -84.0942],
+            [9.9577, -84.1012]
+        ]).addTo(map);
+
+        var map = L.map('map3').setView([9.9615, -84.0815], 15);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        var polygon = L.polygon([
+            [9.9724, -84.0551],
+            [9.9491, -84.0803],
+            [9.9699, -84.0834]
+        ]).addTo(map);
+
+        var map = L.map('map4').setView([9.9545, -84.0702], 15);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        var polygon = L.polygon([
+            [9.9624, -84.0617],
+            [9.9544, -84.0785],
+            [9.9528, -84.0683]
+        ]).addTo(map);
+
+        var map = L.map('map5').setView([9.9560, -84.0841], 15);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        var polygon = L.polygon([
+            [9.9659, -84.0900],
+            [9.9492, -84.0803],
+            [9.9543, -84.0978]
+        ]).addTo(map);
+    </script>
+
+</body>
+
+</html>
